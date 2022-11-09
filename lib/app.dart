@@ -19,6 +19,8 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final counter = ref.watch(countProvider.notifier);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -35,7 +37,7 @@ class MyHomePage extends ConsumerWidget {
       })),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ref.read(countProvider.notifier).state++;
+          counter.state++;
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
