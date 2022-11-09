@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'ui/counter_page.dart';
 
 final countProvider = StateProvider((ref) => 0);
 
@@ -30,10 +31,21 @@ class MyHomePage extends ConsumerWidget {
       ),
       body: Center(child: Consumer(builder: (context, ref, _) {
         final count = ref.watch(countProvider);
-        return Text(
-          '$count',
-          style: Theme.of(context).textTheme.headline4,
-        );
+        return Column(children: [
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SecondRoute()),
+              );
+            },
+            child: const Text('TextButton'),
+          ),
+          Text(
+            '$count',
+            style: Theme.of(context).textTheme.headline4,
+          )
+        ]);
       })),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

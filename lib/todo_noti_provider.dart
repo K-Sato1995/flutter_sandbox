@@ -1,5 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import 'models/todo.dart';
+
 // https://github.com/altive/flutter_app_template/tree/main/packages/flutter_app/lib/src/pages/riverpod_example_page/state_notifier_provider_page
 class TodoNotifier extends StateNotifier<List<Todo>> {
   TodoNotifier() : super([]);
@@ -22,3 +24,10 @@ class TodoNotifier extends StateNotifier<List<Todo>> {
     ];
   }
 }
+
+// Providerの定数をグローバルに宣言
+// StateNotifierProviderの後に続けて、Notifierクラスの型と、格納する状態の型を明示する
+final todoListNotifierProvider =
+    StateNotifierProvider<TodoNotifier, List<Todo>>(
+  (ref) => TodoNotifier(),
+);
