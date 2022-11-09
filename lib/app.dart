@@ -21,8 +21,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(countProvider.notifier);
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -31,7 +29,6 @@ class MyHomePage extends ConsumerWidget {
         ),
       ),
       body: Center(child: Consumer(builder: (context, ref, _) {
-        final count = ref.watch(countProvider);
         return Column(children: [
           TextButton(
             onPressed: () {
@@ -51,19 +48,8 @@ class MyHomePage extends ConsumerWidget {
             },
             child: const Text('todo'),
           ),
-          Text(
-            '$count',
-            style: Theme.of(context).textTheme.headline4,
-          )
         ]);
       })),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          counter.state++;
-        },
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
