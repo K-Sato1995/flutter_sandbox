@@ -37,7 +37,7 @@ class MyHomePage extends ConsumerWidget {
             onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const SecondRoute()),
+                MaterialPageRoute(builder: (context) => const CounterPage()),
               );
             },
             child: const Text('counter'),
