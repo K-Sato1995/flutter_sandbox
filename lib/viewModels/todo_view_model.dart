@@ -1,6 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-import 'models/todo.dart';
+import 'package:riverpod_test/models/todo.dart';
 
 // https://github.com/altive/flutter_app_template/tree/main/packages/flutter_app/lib/src/pages/riverpod_example_page/state_notifier_provider_page
 class TodoNotifier extends StateNotifier<List<Todo>> {
