@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'ui/counter_page.dart';
+import 'ui/todo_page.dart';
 
 final countProvider = StateProvider((ref) => 0);
 
@@ -39,7 +40,16 @@ class MyHomePage extends ConsumerWidget {
                 MaterialPageRoute(builder: (context) => const SecondRoute()),
               );
             },
-            child: const Text('TextButton'),
+            child: const Text('counter'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const TodoPage()),
+              );
+            },
+            child: const Text('todo'),
           ),
           Text(
             '$count',

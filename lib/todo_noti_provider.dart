@@ -25,8 +25,6 @@ class TodoNotifier extends StateNotifier<List<Todo>> {
   }
 }
 
-// Providerの定数をグローバルに宣言
-// StateNotifierProviderの後に続けて、Notifierクラスの型と、格納する状態の型を明示する
 final todoListNotifierProvider =
     StateNotifierProvider<TodoNotifier, List<Todo>>(
   (ref) => TodoNotifier(),
