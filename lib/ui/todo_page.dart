@@ -30,7 +30,7 @@ class TodoPage extends ConsumerWidget {
             onPressed: () {
               addTodo();
             },
-            child: const Text('Add todo'),
+            child: const Text('Add Todo'),
           ),
           ElevatedButton(
             onPressed: () {
