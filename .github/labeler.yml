@@ -1,0 +1,14 @@
+# Labelの追加・マッチパターンは下記参照
+# https://github.com/actions/labeler#create-githublabeleryml
+CI/CD:
+  - any: ['.github/**/*']
+
+lib:
+  - any: ['lib/**/*']
+
+ios:
+  - any: ['ios/**/*']
+
+docs:
+ - any: ['docs/**/*']
+ 

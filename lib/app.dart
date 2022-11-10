@@ -46,7 +46,7 @@ class MyHomePage extends ConsumerWidget {
                 MaterialPageRoute(builder: (context) => const TodoPage()),
               );
             },
-            child: const Text('todo'),
+            child: const Text('todo list'),
           ),
         ]);
       })),

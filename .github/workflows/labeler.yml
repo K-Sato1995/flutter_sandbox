@@ -1,0 +1,16 @@
+
+name: Pull request labeler
+on:
+  - pull_request_target
+
+jobs:
+  pr_labeler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@main
+        # Config optionsは下記参照
+        # https://github.com/actions/labeler#inputs
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          configuration-path: .github/labeler.yml
+          sync-labels: true
