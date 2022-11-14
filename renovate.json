@@ -9,7 +9,7 @@
   "packageRules": [
     {
       "matchPaths": [
-        "lib/**/*"
+        "/android/**/*"
       ],
       "reviewers": [
         "K-Sato1995"
