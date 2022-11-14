@@ -11,9 +11,11 @@
       "matchManagers": [
         "gradle"
       ],
+      "enabled": true,
       "reviewers": [
         "K-Sato1995"
-      ]
+      ],
+      "addLabels": ["deps-php"]
     }
   ],
   "prConcurrentLimit": 10,
