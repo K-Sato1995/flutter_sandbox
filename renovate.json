@@ -8,8 +8,8 @@
   "baseBranches": ["develop"],
   "packageRules": [
     {
-      "matchPaths": [
-        "/android/**/*"
+      "matchManagers": [
+        "gradle"
       ],
       "reviewers": [
         "K-Sato1995"
