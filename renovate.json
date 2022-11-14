@@ -4,7 +4,6 @@
     "config:base"
   ],
   "baseBranches": ["develop"],
-  "includePaths": ["pubspec.yaml"],
   "packageRules": [
     {
       "matchUpdateTypes": ["patch", "pin", "digest"],
