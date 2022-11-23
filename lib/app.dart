@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'ui/counter_page.dart';
 import 'ui/todo_page.dart';
+import 'ui/api_page.dart';
 
 final countProvider = StateProvider((ref) => 0);
 
@@ -38,6 +39,15 @@ class MyHomePage extends ConsumerWidget {
               );
             },
             child: const Text('counter'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const APIPage()),
+              );
+            },
+            child: const Text('api'),
           ),
           TextButton(
             onPressed: () {
