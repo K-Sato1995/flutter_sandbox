@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_test/viewModels/post_view_model.dart';
+import 'package:riverpod_test/widgets/loader.dart';
 
 class APIPage extends ConsumerWidget {
   const APIPage({super.key});
@@ -9,6 +10,9 @@ class APIPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final postState = ref.watch(postProvider);
 
+    if (postState.isLoading) {
+      return const Loader();
+    }
     return Scaffold(
         appBar: AppBar(
           title: const Text('Posts'),
