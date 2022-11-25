@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_test/viewModels/post_view_model.dart';
 import 'package:riverpod_test/widgets/loader.dart';
+import 'package:riverpod_test/models/post.dart';
 
 class APIPage extends ConsumerWidget {
   const APIPage({super.key});
@@ -17,15 +18,25 @@ class APIPage extends ConsumerWidget {
         appBar: AppBar(
           title: const Text('Posts'),
         ),
-        body: ListView(
-          padding: const EdgeInsets.symmetric(vertical: 8),
-          children: [
-            for (var post in postState.postList)
-              ListTile(
-                title: Text(post.title),
-                subtitle: Text(post.body),
-              ),
-          ],
-        ));
+        body: _ItemList(posts: postState.postList));
+  }
+}
+
+class _ItemList extends StatelessWidget {
+  const _ItemList({Key? key, required this.posts}) : super(key: key);
+  final List<Post> posts;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.symmetric(vertical: 8),
+      children: [
+        for (var post in posts)
+          ListTile(
+            title: Text(post.title),
+            subtitle: Text(post.body),
+          ),
+      ],
+    );
   }
 }
