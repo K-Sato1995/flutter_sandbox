@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_test/viewModels/post_view_model.dart';
 import 'package:riverpod_test/widgets/loader.dart';
 import 'package:riverpod_test/models/post.dart';
-import 'package:riverpod_test/styles/colros.dart';
+import 'package:riverpod_test/styles/colors.dart';
 
 class APIPage extends ConsumerWidget {
   const APIPage({super.key});
@@ -29,15 +29,20 @@ class _ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return ListView(
+      padding: const EdgeInsets.symmetric(vertical: 8),
       children: [
         for (var post in posts)
           InkWell(
             onTap: (() => {print("TAP")}),
-            child: (ListTile(
-              title: Text(post.title),
-              subtitle: Text(post.body),
-            )),
+            child: Card(
+              margin: const EdgeInsets.all(10),
+              child: (ListTile(
+                contentPadding: const EdgeInsets.all(20),
+                title: Text(post.title),
+                subtitle: Text(post.body),
+              )),
+            ),
           ),
       ],
     );
