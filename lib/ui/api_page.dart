@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_test/viewModels/post_view_model.dart';
 import 'package:riverpod_test/widgets/loader.dart';
 import 'package:riverpod_test/models/post.dart';
+import 'package:riverpod_test/styles/colros.dart';
 
 class APIPage extends ConsumerWidget {
   const APIPage({super.key});
@@ -28,13 +29,15 @@ class _ItemList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      padding: const EdgeInsets.symmetric(vertical: 8),
+    return Stack(
       children: [
         for (var post in posts)
-          ListTile(
-            title: Text(post.title),
-            subtitle: Text(post.body),
+          InkWell(
+            onTap: (() => {print("TAP")}),
+            child: (ListTile(
+              title: Text(post.title),
+              subtitle: Text(post.body),
+            )),
           ),
       ],
     );
