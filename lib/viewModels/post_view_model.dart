@@ -26,10 +26,6 @@ class PostNotifier extends StateNotifier<PostState> {
 
   Future<void> loadPosts() async {
     final res = await httpClient.get('/posts');
-
-    print('hello');
-    print(res.data);
-
     final posts = (res.data as List<dynamic>)
         .map((dynamic post) => Post.fromJson(post as Map<String, dynamic>))
         .toList();
